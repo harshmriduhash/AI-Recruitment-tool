@@ -1,8 +1,10 @@
-import { db } from './drizzle';
-import { JobListings, NewJobListing } from '@/server/db/schemas';
-import { v4 as uuidv4 } from 'uuid';
+import { db } from "./drizzle";
+import { JobListings, NewJobListing } from "@/server/db/schemas";
+import { v4 as uuidv4 } from "uuid";
 
-export async function addJobPosting(jobPosting: Omit<NewJobListing, 'id' | 'publishedAt'>) {
+export async function addJobPosting(
+  jobPosting: Omit<NewJobListing, "id" | "publishedAt">
+) {
   try {
     const newJobPosting: NewJobListing = {
       ...jobPosting,
@@ -10,9 +12,12 @@ export async function addJobPosting(jobPosting: Omit<NewJobListing, 'id' | 'publ
       publishedAt: new Date(),
     };
 
-    const [insertedJob] = await db.insert(JobListings).values(newJobPosting).returning();
+    const [insertedJob] = await db
+      .insert(JobListings)
+      .values(newJobPosting)
+      .returning();
     return insertedJob;
   } catch (error) {
-    throw new Error('Failed to add job posting');
+    throw new Error("Failed to add job posting");
   }
 }

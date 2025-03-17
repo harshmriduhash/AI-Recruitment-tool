@@ -10,7 +10,6 @@ import {
   timestamp,
 } from "drizzle-orm/pg-core";
 
-
 // Schema definitions
 export const JobListings = pgTable("job_listings", {
   id: uuid("id").defaultRandom().primaryKey(),
