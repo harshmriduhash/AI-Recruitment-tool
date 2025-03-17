@@ -1,0 +1,53 @@
+I would like an app that provides a set of "AI Powered Business Tools"
+
+Application Overview
+I am trying to create a simple application that manages job postings for an employer and manages applicants for each job. 
+
+My goal right now is to create an MVP to show off the core functionality of the application. 
+In this initial MVP I want to create 4 main pages:
+- Site Landing Page
+- User Dash Board 
+- Job Listings page
+    - Job detail Page
+- Applicants list page
+    - Applicant detail page
+
+The use of AI will come into play in two primary ways: 
+    - Use of AI to create a new job post from existing sources, such as a file upload or extracting text from a website. 
+    - Use of AI to create a new applicant from a file upload. Sources should include raw text file, word document, and PDF. 
+    - Use AI to review and match applicants to job postings.
+
+Here's a brief overview of each page. 
+
+Job Listings Page
+* The purpose of the Job list page is to catalog all job listings. The page should also include a "add new" button in the top right corner. When the user clicks on the "add new" button, a modal should pop up that allows the user to upload a file or enter a URL. Once the user uploads the file or enters the URL, the AI will extract the job description and create a new job listing. The user should then be redirected to the job listing page where they can edit the job listing.
+* If the user is not logged in, we don't want to show the list view and allow the user to click the new button. Instead, this whole section should be a screen that says to begin generating your AI offers, login, wish you just have a login button form right there.
+* I am using next jS 14 app router so I would like you to create a side page that fetches all of the jobs and applicants available to the logged in user.  
+
+Job Detail Page:
+* This page should containt the complete details of the job description.
+* It should include an edit button to manually edit specific fields. 
+* This should also include a list of applicants that have been matched to this job.
+* The user should be able to click on an applicant to view their details.
+* The user should be able to click on a button to generate a new offer for the applicant.
+
+
+Applicant List Page
+* The purpose of the Applicants list page is to catalog all applicants. The page should also include a "add new" button in the top right corner. When the user clicks on the "add new" button, a modal should pop up that allows the user to upload a file. Once the user uploads the file, the AI will extract the applicant information and create a new applicant. The user should then be redirected to the applicant page where they can edit the applicant.
+* It is important to note that if the user is not logged in, we don't want to show the list view and allow the user to click the new button. Instead, this whole section should be a screen that says to begin generating your AI offers, login, wish you just have a login button form right there.
+
+
+Navbar
+I've uploaded a picture of this offer list you so please analyze it and you will notice that I do have a navigation bar on the top which has the name of the application in the top left hand corner called AI offers and in the right hand corner we have a NAV item that says Job Listings, Applicants, and Settings. Next to that I have a little circle icon which represents the currently logged in user that we're going to find through clerk.
+
+Technologies
+* I'm going to be using next JS 14 and it's super important that you use the app router functionality in the latest version of next JS. Do not use page routers.
+* Tell that I'm gonna be using clerk for authentication and I'm going to be using Vercel AI 
+
+SDK
+* And to save offers and everything else data wise inside of my application I'm going to using the new Vercel postgres database. 
+* I want to use drizzle as the ORM between my Nexus type script application and my databse.
+* When it comes to styling, we're gonna be using tailwind and shacdn.
+
+Styles
+* I want this application to use happy orange colors that are upbeat. I want that to be my primary color. Outside of that I want to use a series of gray black and white for the rest of the colors inside my application.
